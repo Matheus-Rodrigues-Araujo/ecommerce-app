@@ -26,29 +26,28 @@ export default function Navbar() {
       {
         isSidebarActive &&
          <div className={`sidebar absolute top-0 right-0`}>
-          <div className='px-[2.5rem]' >
+          <div className='px-[2.5rem] h-full' >
             <div className="sidebar-header flex items-center justify-between">
               <h2>Carrinho <br/> de compras</h2>
               <button className="close-sidebar-btn" onClick={handleSidebar}>X</button>
             </div>
 
-            <div className='' >
-              <ul className='shop-car-list mt-12 ' style={{overflowY: 'visible'}} >
+            <div className='shop-car-container h-full' >
+              <ul className='shop-car-list mt-12 overflow-auto' style={{overflowY: 'visible'}} >
                 <ShopCarItem/>
                 <ShopCarItem/>
                 <ShopCarItem/>
                 <ShopCarItem/>
+                
               </ul>
               
-              <div className='flex justify-between w-[auto] mr-5 mt-5' >
+              <div className='total-price flex justify-between w-[85%] px-2 mt-5 bottom-28 absolute'>
                 <p className='text-white text-[28px] font-[700]'>Total</p>
                 <p className='text-white text-[28px] font-[700]'>R${798}</p>
               </div>
             </div>
-
           </div>
-          <button className='absolute bottom-0 bg-black text-white w-[100%] p-5' >Finalizar Compra</button>
-
+          <button className='buy-shop-car-btn absolute bottom-0 bg-black text-white font-[700] w-[100%] w-full p-5 hover:bg-green-600' >Finalizar Compra</button>
         </div>
       }
     </>

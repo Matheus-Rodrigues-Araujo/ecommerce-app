@@ -49,6 +49,11 @@ nav{
   font-size: 18px;
 }
 
+.buy-shop-car-btn{
+  transition: 0.3s ease;
+  font-size: 28px;
+}
+
 .sidebar{
   background-color: var(--blue);
   min-height:100vh;
