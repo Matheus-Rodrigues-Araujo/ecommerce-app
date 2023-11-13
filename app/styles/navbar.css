@@ -1,0 +1,80 @@
+nav{
+  background-color: var(--blue);
+  height:6.3125rem;
+}
+
+.brand{
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.1875rem;
+}
+
+.brand span{
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.1875rem;
+}
+
+.shop-car-btn{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #FFF;
+  width: 90px;
+  height: 45px;
+  top: 29px;
+  left: 1262px;
+  border-radius: 8px;
+}
+
+.shop-car-btn img{
+  width: 19.01px;
+  height: 18px;
+}
+
+.shop-car-btn p{
+  font-weight: 700;
+  color: #000;
+  font-size: 18px;
+}
+
+.sidebar{
+  background-color: var(--blue);
+  min-height:100vh;
+  width: 486px;
+  right: 0px;
+  box-shadow: -5px 0px 6px 0px var(--black-2);
+  z-index: 1000;
+  position: fixed;
+}
+
+.sidebar-header{
+  height:6.3125rem;
+}
+
+.sidebar-header h2{
+  font-size: 27px;
+  font-weight: 700;
+  margin-top: 37px;
+  color: #FFF;
+}
+
+.close-sidebar-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #FFF;
+  width: 38px;
+  height: 38px;
+  border-radius: 3rem;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 15px;
+}
