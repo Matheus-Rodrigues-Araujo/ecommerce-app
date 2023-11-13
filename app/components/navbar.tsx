@@ -1,13 +1,12 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
+import ShopCarItem from './shopCarItem'
 
 export default function Navbar() {
   const [isSidebarActive, setSidebarActive] = useState(false)
 
-  const handleSidebar = () =>{
-    setSidebarActive(!isSidebarActive)
-  }
+  const handleSidebar = () =>{ setSidebarActive(!isSidebarActive) }
 
   return (
     <>
@@ -27,10 +26,29 @@ export default function Navbar() {
       {
         isSidebarActive &&
          <div className={`sidebar absolute top-0 right-0`}>
-           <div className="sidebar-header flex items-center justify-between px-[2.5rem]">
-               <h2>Carrinho <br/> de compras</h2>
-               <button className="close-sidebar-btn" onClick={handleSidebar}>X</button>
+          <div className='px-[2.5rem]' >
+            <div className="sidebar-header flex items-center justify-between">
+              <h2>Carrinho <br/> de compras</h2>
+              <button className="close-sidebar-btn" onClick={handleSidebar}>X</button>
+            </div>
+
+            <div className='' >
+              <ul className='shop-car-list mt-12 ' style={{overflowY: 'visible'}} >
+                <ShopCarItem/>
+                <ShopCarItem/>
+                <ShopCarItem/>
+                <ShopCarItem/>
+              </ul>
+              
+              <div className='flex justify-between w-[auto] mr-5 mt-5' >
+                <p className='text-white text-[28px] font-[700]'>Total</p>
+                <p className='text-white text-[28px] font-[700]'>R${798}</p>
+              </div>
+            </div>
+
           </div>
+          <button className='absolute bottom-0 bg-black text-white w-[100%] p-5' >Finalizar Compra</button>
+
         </div>
       }
     </>

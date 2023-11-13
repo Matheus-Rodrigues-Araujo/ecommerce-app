@@ -21,6 +21,11 @@ nav{
   line-height: 1.1875rem;
 }
 
+.shop-car-list{
+  display: grid;
+  gap: 30px;
+}
+
 .shop-car-btn{
   display: flex;
   align-items: center;
@@ -78,3 +83,21 @@ nav{
   font-size: 28px;
   line-height: 15px;
 }
+
+.counter{
+  padding: 2px;
+  top: 44px;
+  left: 212px;
+  border-radius: 4px;
+  border: 0.3px solid rgba(191, 191, 191, 1);
+}
+
+.counter .remove-btn{
+  border-right: 0.3px solid rgba(191, 191, 191, 1);
+  padding-inline: 5px;
+}
+.counter .add-btn{
+  border-left: 0.3px solid rgba(191, 191, 191, 1);
+  padding-inline: 5px;
+}
+
