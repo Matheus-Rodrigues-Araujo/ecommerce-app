@@ -4,6 +4,7 @@ import './globals.css'
 import './styles/navbar.css'
 import './styles/footer.css'
 import './styles/products.css'
+import { GlobalContextProvider } from './context/store'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <GlobalContextProvider>
+            {children}
+        </GlobalContextProvider>
+      </body>
     </html>
   )
 }

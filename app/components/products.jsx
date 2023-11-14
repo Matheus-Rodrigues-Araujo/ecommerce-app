@@ -1,24 +1,24 @@
-import Image from "next/image"
+'use client'
+import useSWR from 'swr'
 import ProductCard from '../components/productCard'
+import { useGlobalContext } from '../context/store'
+import { useState } from 'react'
+// const api = process.env.NEXT_PUBLIC_API
+const api = process.env.NEXT_PUBLIC_API
 
-const getProducts = async() =>{
-    const res = await fetch(process.env.API_URL+'?page=1&rows=8&sortBy=id&orderBy=DESC', {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    const data = await res.json()
-    return data
-  }
 
-export default async function Products(){
-    const data = await getProducts()
-    const {products} = data
+export default function Products(){
+    const [purchaseList, setPurchaseList] = useState([])
+    const fetcher = (...args) => fetch(...args).then(res => res.json())
+    const { data, error, isLoading } = useSWR(api+'?page=1&rows=8&sortBy=id&orderBy=DESC', fetcher)
+    if (error) return <div>failed to load</div>
+    if (isLoading) return <div>loading...</div>
+    const products = data && data.products && data.products;
 
     return(
       <div className="w-100 flex justify-center items-center" >
         <ul className="products-list" >
-          {products.map((item) => (<ProductCard item={item} />))}
+          {products.length && products.map((item) => (<ProductCard  key={item.id} item={item} />))}
         </ul>
       </div>
     )

@@ -1,5 +1,3 @@
-// Sidebar.js
-import { useState } from 'react';
 import ShopCarItem from './shopCarItem';
 
 const Sidebar = ({handleSidebar }) => {
@@ -12,11 +10,7 @@ const Sidebar = ({handleSidebar }) => {
         </div>
 
         <div className='shop-car-container h-full' >
-          <ul className='shop-car-list mt-12 overflow-y-auto' style={{maxHeight: '600px'}} >
-            <ShopCarItem/>
-            <ShopCarItem/>
-            <ShopCarItem/>
-            <ShopCarItem/>
+          <ul className='shop-car-list mt-12 overflow-y-auto' style={{maxHeight: '350px'}} >
             <ShopCarItem/>
             <ShopCarItem/>
             <ShopCarItem/>

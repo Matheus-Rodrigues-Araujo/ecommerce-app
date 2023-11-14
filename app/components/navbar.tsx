@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
-import ShopCarItem from './shopCarItem'
 import Sidebar from './sidebar'
 
 export default function Navbar() {
@@ -12,9 +11,7 @@ export default function Navbar() {
   return (
     <>
       <nav className='flex fixed-top justify-between items-center px-[2.5rem]' >
-        <Link href="/" className='brand' >
-          MKS <span>Sistemas</span>
-        </Link>
+        <Link href="/" className='brand' >MKS <span>Sistemas</span></Link>
 
         <button className='shop-car-btn' onClick={handleSidebar} >
           <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">

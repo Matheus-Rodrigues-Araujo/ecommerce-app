@@ -1,4 +1,7 @@
+import { useGlobalContext } from '../context/store'
+
 export default function ProductCard({item}){
+    const {data, setData} = useGlobalContext()
     return (
         <li key={item.id} className="product-card" >
             <div className="product" >
@@ -10,9 +13,7 @@ export default function ProductCard({item}){
                     <p>{item.price}</p>
                     </div>
                 </div>
-                {/* <div className="info-2" > */}
                     <p className="description" >{item.description}</p>
-                {/* </div> */}
                 </div>
             </div>
             <button className="buy-btn flex" >
