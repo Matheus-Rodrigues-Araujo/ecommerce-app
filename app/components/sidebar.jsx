@@ -1,8 +1,20 @@
 import ShopCarItem from './shopCarItem';
 import { useGlobalContext } from '../context/store';
+import { useEffect, useState } from 'react';
 
 const Sidebar = ({handleSidebar }) => {
   const {data, setData} = useGlobalContext()
+  const [purchasePrice, setPurchasePrice] = useState(0)
+
+  const getTotalPrice = () =>{
+    if(data.length >=1){
+      const total = data.reduce((acc, item) => acc + item.price * (item.total || 0), 0);
+      setPurchasePrice(total)
+    }
+  }
+  useEffect(()=>{
+    data.length>=1 && getTotalPrice()
+  }, [data])
 
   return (
     <div className={`sidebar absolute top-0 right-0`}>
@@ -21,7 +33,7 @@ const Sidebar = ({handleSidebar }) => {
 
           <div className='total-price flex justify-between w-[85%] px-2 mt-5 bottom-28 absolute'>
             <p className='text-white text-[28px] font-[700]'>Total</p>
-            <p className='text-white text-[28px] font-[700]'>R${0}</p>
+            <p className='text-white text-[28px] font-[700]'>R${purchasePrice}</p>
           </div>
         </div>
       </div>

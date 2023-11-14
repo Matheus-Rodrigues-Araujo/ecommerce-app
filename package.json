@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.30",
     "axios": "^1.6.1",
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18",
+    "styled-components": "^6.1.1",
     "swr": "^2.2.4"
   },
   "devDependencies": {
