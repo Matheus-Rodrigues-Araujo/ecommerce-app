@@ -1,4 +1,8 @@
-.shop-car-list{
+  .shop-item{
+    border-top-right-radius: 0.7rem;
+  }
+  
+  .shop-car-list{
     display: grid;
     gap: 30px;
   }
@@ -83,4 +87,17 @@
     padding-inline: 5px;
   }
   
-  
+  .delete-item-btn{
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 400;
+    line-height: 17px;
+    border-radius: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-left: 2px;
+  }
