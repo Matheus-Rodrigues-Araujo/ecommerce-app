@@ -38,7 +38,6 @@ export default function ShopCarItem({item}:IShopItem){
       setData(newData)
     }
 
-
     return (
         <li className='relative shop-item bg-white w-[95%] h-[90px] rounded-[8px] p-5 flex items-center justify-between' >
             <Image src={item.photo} width={50} height={50} alt='product' />

@@ -1,0 +1,31 @@
+/* Estilos CSS para o Skeleton Loader */
+.skeleton-loader {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .skeleton-image {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc; /* Cor de fundo para a imagem do esqueleto */
+    margin-right: 10px;
+  }
+  
+  .skeleton-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .skeleton-title {
+    width: 150px;
+    height: 20px;
+    background-color: #ccc; /* Cor de fundo para o título do esqueleto */
+    margin-bottom: 5px;
+  }
+  
+  .skeleton-description {
+    width: 200px;
+    height: 15px;
+    background-color: #ccc; /* Cor de fundo para a descrição do esqueleto */
+  }
+  
