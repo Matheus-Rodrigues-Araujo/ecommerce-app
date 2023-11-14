@@ -6,7 +6,6 @@ import { useState } from 'react'
 // const api = process.env.NEXT_PUBLIC_API
 const api = process.env.NEXT_PUBLIC_API
 
-
 export default function Products(){
     const [purchaseList, setPurchaseList] = useState([])
     const fetcher = (...args) => fetch(...args).then(res => res.json())

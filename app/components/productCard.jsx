@@ -1,7 +1,32 @@
+import { useEffect } from 'react'
 import { useGlobalContext } from '../context/store'
 
 export default function ProductCard({item}){
     const {data, setData} = useGlobalContext()
+
+
+    const handlePurchase = () => {
+        const newItem = {
+          total: 1,
+          photo: item.photo,
+          name: item.name,
+          price: item.price
+        };
+      
+        const existingItem = data.find(existingItem => existingItem.name === newItem.name);
+      
+        if (existingItem) {
+          setData(prevItems =>
+            prevItems.map(item =>
+              item.name === existingItem.name ? { ...item, total: item.total + newItem.total } : item
+            )
+          );
+        } else {
+          setData(prevItems => [...prevItems, newItem]);
+        }
+      };
+      
+
     return (
         <li key={item.id} className="product-card" >
             <div className="product" >
@@ -16,7 +41,7 @@ export default function ProductCard({item}){
                     <p className="description" >{item.description}</p>
                 </div>
             </div>
-            <button className="buy-btn flex" >
+            <button className="buy-btn flex" onClick={handlePurchase} >
                 
                 <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="shopping-bag">

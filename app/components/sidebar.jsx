@@ -1,6 +1,9 @@
 import ShopCarItem from './shopCarItem';
+import { useGlobalContext } from '../context/store';
 
 const Sidebar = ({handleSidebar }) => {
+  const {data, setData} = useGlobalContext()
+
   return (
     <div className={`sidebar absolute top-0 right-0`}>
       <div className='px-[2.5rem] h-full' >
@@ -11,14 +14,14 @@ const Sidebar = ({handleSidebar }) => {
 
         <div className='shop-car-container h-full' >
           <ul className='shop-car-list mt-12 overflow-y-auto' style={{maxHeight: '350px'}} >
-            <ShopCarItem/>
-            <ShopCarItem/>
-            <ShopCarItem/>
+            {
+              data.length ? data.map(item => <ShopCarItem item={item} />) : ''
+            }
           </ul>
 
           <div className='total-price flex justify-between w-[85%] px-2 mt-5 bottom-28 absolute'>
             <p className='text-white text-[28px] font-[700]'>Total</p>
-            <p className='text-white text-[28px] font-[700]'>R${798}</p>
+            <p className='text-white text-[28px] font-[700]'>R${0}</p>
           </div>
         </div>
       </div>

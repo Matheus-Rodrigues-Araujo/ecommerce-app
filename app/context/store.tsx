@@ -1,11 +1,17 @@
 'use client'
-import {createContext, useContext, Dispatch, SetStateAction, useState} from 'react'
+import {
+    createContext,
+    useContext,
+    Dispatch,
+    SetStateAction,
+    useState
+} from 'react'
 
-type ItemType = {
+export type ItemType = {
+    total: number,
     photo: string;
     name: string;
     price: number;
-    description:string;
 }
 
 interface ContextProps{
@@ -19,7 +25,6 @@ const GlobalContext = createContext<ContextProps>({
 })
 
 export const GlobalContextProvider=({children}:any) =>{
-    const [userId, setUserId] = useState('')
     const [data, setData] = useState<[] | ItemType[]>([])
 
     return  (
