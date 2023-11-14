@@ -13,7 +13,7 @@ const Sidebar = ({handleSidebar }) => {
     }
   }
   useEffect(()=>{
-    data.length>=1 && getTotalPrice()
+    getTotalPrice()
   }, [data])
 
   return (
@@ -27,7 +27,7 @@ const Sidebar = ({handleSidebar }) => {
         <div className='shop-car-container h-full' >
           <ul className='shop-car-list mt-12 overflow-y-auto' style={{maxHeight: '350px'}} >
             {
-              data.length ? data.map(item => <ShopCarItem item={item} />) : ''
+              data.length ? data.map(item => <ShopCarItem  key={item.id} item={item} />) : ''
             }
           </ul>
 
