@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useGlobalContext } from '../context/store'
+import Image from 'next/image';
 
 export default function ProductCard({item}){
     const {data, setData} = useGlobalContext()
@@ -30,7 +31,7 @@ export default function ProductCard({item}){
     return (
         <li key={item.id} className="product-card" >
             <div className="product" >
-                <img className="product-image" src={item.photo} alt="item photo"/>
+                <Image className="product-image" src={item.photo} height={180} width={180} alt="item photo"/>
                 <div className="product-information" >
                 <div className="info-1" >
                     <p className="product-name" >{item.name}</p>
