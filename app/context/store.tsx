@@ -1,4 +1,6 @@
 'use client'
+import { ItemType } from '../types/ItemType'
+import { ContextProps } from '../interfaces/IContextProps'
 import {
     createContext,
     useContext,
@@ -6,18 +8,6 @@ import {
     SetStateAction,
     useState
 } from 'react'
-
-export type ItemType = {
-    total: number,
-    photo: string;
-    name: string;
-    price: number;
-}
-
-interface ContextProps{
-    data: ItemType[],
-    setData: Dispatch<SetStateAction<ItemType[]>>
-}
 
 const GlobalContext = createContext<ContextProps>({
     data: [],

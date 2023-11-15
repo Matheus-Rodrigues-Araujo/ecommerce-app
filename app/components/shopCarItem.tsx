@@ -1,11 +1,9 @@
 import Image from "next/image"
-import { ItemType } from "../context/store"
+import { ItemType } from "../types/ItemType"
+import { IShopItem } from '../interfaces/IShopItem'
 import { useGlobalContext } from "../context/store"
 import { useState } from "react"
 
-interface IShopItem{
-    item: ItemType
-}
 
 export default function ShopCarItem({item}:IShopItem){
     const {data, setData} = useGlobalContext()
