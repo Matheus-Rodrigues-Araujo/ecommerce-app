@@ -5,7 +5,6 @@ import './styles/navbar.css'
 import './styles/footer.css'
 import './styles/products.css'
 import './styles/sidebar.css'
-import './styles/skeleton.css'
 import { GlobalContextProvider } from './context/store'
 
 const inter = Inter({ subsets: ['latin'] })
