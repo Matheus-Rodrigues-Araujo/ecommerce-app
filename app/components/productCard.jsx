@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useGlobalContext } from '../context/store'
 import Image from 'next/image';
 

@@ -1,7 +1,7 @@
 import ShopCarItem from './shopCarItem';
 import { useGlobalContext } from '../context/store';
 import { useEffect, useState } from 'react';
-import { SCSidebar } from '../styledComponents/SCsidebar';
+import { SCSidebar } from '../styledComponents/SCSidebar';
 
 const Sidebar = ({handleSidebar }) => {
   const {data, setData} = useGlobalContext()
