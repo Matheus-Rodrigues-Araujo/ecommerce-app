@@ -1,13 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
+import { GlobalContextProvider } from './context/store'
 import './globals.css'
 import './styles/navbar.css'
-import './styles/footer.css'
 import './styles/products.css'
-import './styles/sidebar.css'
-import { GlobalContextProvider } from './context/store'
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'MKS Sistemas',
@@ -21,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <GlobalContextProvider>
             {children}
         </GlobalContextProvider>

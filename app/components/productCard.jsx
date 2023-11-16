@@ -36,7 +36,7 @@ export default function ProductCard({item}){
                 <div className="info-1" >
                     <p className="product-name" >{item.name}</p>
                     <div className="product-price flex justify-center items-center" >
-                    <p>{item.price}</p>
+                      <p>{item.price}</p>
                     </div>
                 </div>
                     <p className="description" >{item.description}</p>

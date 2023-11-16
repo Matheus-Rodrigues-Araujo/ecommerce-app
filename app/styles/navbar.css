@@ -1,24 +1,51 @@
 nav{
-  background-color: var(--blue);
-  height:6.3125rem;
+    display: flex;
+    position: absolute;
+    justify-content:space-between;
+    align-items: center;
+    padding-inline: 2.5rem;
+    top: 0;
+    width: 100%;
+    background-color: var(--blue);
+    height:6.3125rem;
 }
-
 .brand{
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 2.5rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.1875rem;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.1875rem;
 }
 
 .brand span{
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.1875rem;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.1875rem;
 }
 
-
+.shop-car-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #FFF;
+    width: 90px;
+    height: 45px;
+    top: 29px;
+    left: 1262px;
+    border-radius: 8px;
+  }
+  
+  .shop-car-btn img{
+    width: 19.01px;
+    height: 18px;
+  }
+  
+  .shop-car-btn p{
+    font-weight: 700;
+    color: #000;
+    font-size: 18px;
+  }
