@@ -33,13 +33,13 @@ export default function ProductCard({item}){
             <div className="product" >
                 <Image className="product-image" src={item.photo} height={180} width={180} alt="item photo"/>
                 <div className="product-information" >
-                <div className="info-1" >
-                    <p className="product-name" >{item.name}</p>
-                    <div className="product-price flex justify-center items-center" >
-                      <p>{item.price}</p>
-                    </div>
-                </div>
-                    <p className="description" >{item.description}</p>
+                  <div className="info" >
+                      <p className="product-name" >{item.name}</p>
+                      <div className="product-price flex justify-center items-center" >
+                        <p>{item.price}</p>
+                      </div>
+                  </div>
+                      <p className="description" >{item.description}</p>
                 </div>
             </div>
             <button className="buy-btn flex" onClick={handlePurchase} >
