@@ -41,19 +41,19 @@ export default function ProductCard({ item }) {
     <li key={item.id} className="product-card">
       <div className="product">
         {loading ? (
-          <Skeleton height={180} width={280} style={{ backgroundColor: 'var(--blue)' }} className='product-image' />
+          <Skeleton height={180} width={280}  className='product-image' />
         ) : (
           item.photo && <Image className="product-image" src={item.photo} height={180} width={180} alt="item photo" />
         )}
         <div className="product-information">
           <div className="info">
-            <p className="product-name">{loading ? <Skeleton style={{ backgroundColor: 'var(--blue)' }} /> : item.name}</p>
+            <p className="product-name">{loading ? <Skeleton  /> : item.name}</p>
             <div className="product-price flex justify-center items-center">
-              <p>{loading ? <Skeleton style={{ backgroundColor: 'var(--blue)' }} /> : item.price}</p>
+              <p>{loading ? <Skeleton style={{ width: '100%' }} /> : item.price}</p>
             </div>
           </div>
           <p className="description">
-            {loading ? <Skeleton style={{ backgroundColor: 'var(--blue)' }} /> : item.description}
+            {loading ? <Skeleton  /> : item.description}
           </p>
         </div>
       </div>
