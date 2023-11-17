@@ -50,3 +50,20 @@ nav{
     color: #000;
     font-size: 18px;
   }
+
+@media screen and (max-width: 400px){
+    .brand{
+      font-size: 2rem;
+
+    .shop-car-btn{
+      width: 70px;
+      height: 40px;
+    }
+
+    .shop-car-btn p{
+      font-weight: 700;
+      color: #000;
+      font-size: 16px;
+    }
+  }
+  }
