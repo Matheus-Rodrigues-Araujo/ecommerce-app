@@ -5,7 +5,7 @@ import ProductCard from './ProductCard';
 import { GlobalContextProvider, useGlobalContext } from '../context/store';
 
 const MockProductCard = ({ item }) => {
-  const { data, setData } = useGlobalContext();
+  const { data } = useGlobalContext();
 
   return (
     <GlobalContextProvider>
@@ -16,8 +16,7 @@ const MockProductCard = ({ item }) => {
 
 MockProductCard.displayName = 'MockProductCard';
 
-jest.mock('next/image', () => ({ src, alt }) => <Image src={src} alt={alt} />);
-
+jest.mock('next/image', () => ({ src, alt }) => <img src={src} alt={alt} />); // Mocking 'next/image'
 
 describe('ProductCard', () => {
   const mockItem = {
@@ -37,6 +36,8 @@ describe('ProductCard', () => {
 
   it('handles button click and adds item to context', async () => {
     render(<MockProductCard item={mockItem} />);
+
+    const { data } = useGlobalContext(); // Destructure data from the context
 
     fireEvent.click(screen.getByText('Comprar'));
 

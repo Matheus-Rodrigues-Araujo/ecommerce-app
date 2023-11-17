@@ -12,7 +12,7 @@ export default function ProductCard({ item }) {
     const delay = setTimeout(() => {
       setLoading(false);
     }, 1000);
-
+  
     return () => clearTimeout(delay);
   }, []);
 
