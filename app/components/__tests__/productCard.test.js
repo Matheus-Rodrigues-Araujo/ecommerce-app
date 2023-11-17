@@ -1,17 +1,21 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ProductCard from './ProductCard';
-import { GlobalContextProvider } from '../context/store';
-import { useGlobalContext } from '../context/store';
-const {data, setData} = useGlobalContext()
+import { GlobalContextProvider, useGlobalContext } from '../context/store';
+
+const MockProductCard = ({ item }) => {
+  const { data, setData } = useGlobalContext();
+
+  return (
+    <GlobalContextProvider>
+      <ProductCard item={item} />
+    </GlobalContextProvider>
+  );
+};
+
+MockProductCard.displayName = 'MockProductCard';
 
 jest.mock('next/image', () => ({ src, alt }) => <img src={src} alt={alt} />);
-
-const MockProductCard = ({ item }) => (
-  <GlobalContextProvider>
-    <ProductCard item={item} />
-  </GlobalContextProvider>
-);
 
 describe('ProductCard', () => {
   const mockItem = {
@@ -35,7 +39,7 @@ describe('ProductCard', () => {
     fireEvent.click(screen.getByText('Comprar'));
 
     await waitFor(() => {
-      const contextData = data
+      const contextData = data;
       expect(contextData).toContainEqual({
         total: 1,
         photo: 'mock-photo-url',
