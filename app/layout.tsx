@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import { GlobalContextProvider } from './context/store'
 import './globals.css'
 import './styles/navbar.css'
+import './styles/sidebar.css'
 import './styles/products.css'
 
 const montserrat = Montserrat({ subsets: ['latin'] })

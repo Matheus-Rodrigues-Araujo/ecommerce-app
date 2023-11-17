@@ -1,7 +1,6 @@
 import ShopCarItem from './shopCarItem';
 import { useGlobalContext } from '../context/store';
 import { useEffect, useState } from 'react';
-import { SCSidebar } from '../styledComponents/SCSidebar';
 
 const Sidebar = ({handleSidebar }) => {
   const {data, setData} = useGlobalContext()
@@ -19,7 +18,7 @@ const Sidebar = ({handleSidebar }) => {
 
   return (
     // <div className={`sidebar absolute top-0 right-0`}>
-    <SCSidebar>
+    <div className='sidebar' >
       <div className='px-[2.5rem] h-full' >
         <div className="sidebar-header flex items-center justify-between">
           <h2>Carrinho <br/> de compras</h2>
@@ -40,7 +39,7 @@ const Sidebar = ({handleSidebar }) => {
         </div>
       </div>
       <button className='buy-shop-car-btn absolute bottom-0 bg-black text-white font-[700] w-[100%] w-full p-5 hover:bg-green-600' >Finalizar Compra</button>
-    </SCSidebar>
+    </div>
   );
 };
 

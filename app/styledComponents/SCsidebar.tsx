@@ -10,18 +10,18 @@ export const SCSidebar = styled.div`
     position: fixed;
     top:0;
 
-    & .sidebar-header{
+    .sidebar-header{
         height:6.3125rem;
       }
       
-    & .sidebar-header h2{
+      .sidebar-header h2{
         font-size: 27px;
         font-weight: 700;
         margin-top: 37px;
         color: #FFF;
       }
       
-    & .close-sidebar-btn{
+      .close-sidebar-btn{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -35,7 +35,7 @@ export const SCSidebar = styled.div`
         line-height: 15px;
       }
       
-    & .counter{
+      .counter{
         padding: 2px;
         top: 44px;
         left: 212px;
@@ -43,17 +43,16 @@ export const SCSidebar = styled.div`
         border: 0.3px solid rgba(191, 191, 191, 1);
       }
       
-    & .counter .remove-btn{
+      .counter .remove-btn{
         border-right: 0.3px solid rgba(191, 191, 191, 1);
         padding-inline: 5px;
       }
-    
-    & .counter .add-btn{
+      .counter .add-btn{
         border-left: 0.3px solid rgba(191, 191, 191, 1);
         padding-inline: 5px;
       }
       
-    & .delete-item-btn{
+      .delete-item-btn{
         width: 20px;
         height: 20px;
         font-size: 10px;
