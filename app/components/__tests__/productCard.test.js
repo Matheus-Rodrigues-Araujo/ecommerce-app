@@ -16,7 +16,9 @@ const MockProductCard = ({ item }) => {
 
 MockProductCard.displayName = 'MockProductCard';
 
-jest.mock('next/image', () => ({ src, alt }) => <Image src={src} alt={alt} />); // Mocking 'next/image'
+jest.mock('next/image', () => function MockNextImage({ src, alt }) {
+  return <Image src={src} alt={alt} />;
+});
 
 describe('ProductCard', () => {
   const mockItem = {
