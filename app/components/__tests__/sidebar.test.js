@@ -6,7 +6,12 @@ jest.mock('../context/store', () => ({
   useGlobalContext: jest.fn(),
 }));
 
-jest.mock('../components/ShopCarItem', () => () => <div data-testid="mock-shop-car-item" />);
+ jest.mock('../components/ShopCarItem', () => {
+  const ShopCarItem = () => <div data-testid="mock-shop-car-item" />;
+  ShopCarItem.displayName = 'ShopCarItem'; // Add display name here
+  return ShopCarItem;
+});
+
 
 describe('Sidebar', () => {
   it('renders sidebar correctly with purchase price', () => {
