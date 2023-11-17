@@ -1,7 +1,7 @@
 import ShopCarItem from './shopCarItem';
 import { useGlobalContext } from '../context/store';
 import { useEffect, useState } from 'react';
-import { SCSidebar } from "../styledComponents/SCSidebar";
+import { SCSidebar } from '../styledComponents/SCSidebar';
 
 const Sidebar = ({handleSidebar }) => {
   const {data, setData} = useGlobalContext()
@@ -18,6 +18,7 @@ const Sidebar = ({handleSidebar }) => {
   }, [data])
 
   return (
+    // <div className={`sidebar absolute top-0 right-0`}>
     <SCSidebar>
       <div className='px-[2.5rem] h-full' >
         <div className="sidebar-header flex items-center justify-between">

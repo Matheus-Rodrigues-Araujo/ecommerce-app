@@ -8,6 +8,7 @@ export const SCSidebar = styled.div`
     box-shadow: -5px 0px 6px 0px var(--black-2);
     z-index: 1000;
     position: fixed;
+    top:0;
 
     .sidebar-header{
         height:6.3125rem;
