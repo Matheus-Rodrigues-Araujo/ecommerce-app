@@ -8,6 +8,7 @@ nav{
     width: 100%;
     background-color: var(--blue);
     height:6.3125rem;
+    z-index: 1000;
 }
 
 .brand{
