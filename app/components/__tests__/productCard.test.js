@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Image } from 'next/image';
