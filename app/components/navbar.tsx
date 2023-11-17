@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='justify-between items-center px-[2.5rem]' >
+      <nav className='justify-between items-center' >
         <Link href="/" className='brand' >MKS <span>Sistemas</span></Link>
 
         <button className='shop-car-btn' onClick={handleSidebar} >

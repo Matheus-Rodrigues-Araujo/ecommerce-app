@@ -1,6 +1,5 @@
 nav{
     display: flex;
-    /* position: absolute; */
     justify-content:space-between;
     align-items: center;
     padding-inline: 2.5rem;
@@ -10,6 +9,7 @@ nav{
     background-color: var(--blue);
     height:6.3125rem;
 }
+
 .brand{
     color: #FFF;
     font-family: Montserrat;
@@ -52,6 +52,11 @@ nav{
   }
 
 @media screen and (max-width: 400px){
+    
+    nav{
+      padding-inline: 1.5rem;
+    }
+
     .brand{
       font-size: 2rem;
 
