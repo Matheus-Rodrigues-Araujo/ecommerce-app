@@ -1,6 +1,5 @@
 import { useQuery } from 'react-query';
 import ProductCard from '../components/productCard';
-
 export default function Products() {
   const { data, error, isLoading } = useQuery(
     'products',
@@ -19,7 +18,9 @@ export default function Products() {
   return (
     <div className="w-100 mt-12 flex justify-center items-center">
       <ul className="products-list">
-        {products.length && products.map((item) => (<ProductCard key={item.id} item={item} />))}
+        {products.length  && products.map((item) => (
+          <ProductCard key={item.id} item={item}  />
+        ))}
       </ul>
     </div>
   );

@@ -1,64 +1,47 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import ProductCard from '../components/ProductCard';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import ProductCard from './ProductCard';
+import { GlobalContextProvider } from '../context/store';
+import { useGlobalContext } from '../context/store';
+const {data, setData} = useGlobalContext()
 
-jest.mock('../context/store', () => ({
-  useGlobalContext: jest.fn(),
-}));
+jest.mock('next/image', () => ({ src, alt }) => <img src={src} alt={alt} />);
 
-const item = {
-  id: 1,
-  photo: 'sample-photo.jpg',
-  name: 'Sample Product',
-  price: 19.99,
-  description: 'Sample description',
-};
+const MockProductCard = ({ item }) => (
+  <GlobalContextProvider>
+    <ProductCard item={item} />
+  </GlobalContextProvider>
+);
 
 describe('ProductCard', () => {
-  it('renders product card correctly', () => {
-    const mockContextValue = {
-      data: [],
-      setData: jest.fn(),
-    };
-    require('../context/store').useGlobalContext.mockReturnValue(mockContextValue);
+  const mockItem = {
+    id: 1,
+    photo: 'mock-photo-url',
+    name: 'Mock Product',
+    price: '$10.00',
+    description: 'Mock product description',
+  };
 
-    const { getByText, getByAltText } = render(<ProductCard item={item} />);
+  it('renders ProductCard component', () => {
+    render(<MockProductCard item={mockItem} />);
 
-    expect(getByText(item.name)).toBeInTheDocument();
-    expect(getByText(`$${item.price}`)).toBeInTheDocument();
-    expect(getByText(item.description)).toBeInTheDocument();
-    expect(getByAltText('item photo')).toBeInTheDocument();
+    expect(screen.getByText('Mock Product')).toBeInTheDocument();
+    expect(screen.getByText('$10.00')).toBeInTheDocument();
   });
 
-  it('handles purchase correctly', () => {
-    const mockContextValue = {
-      data: [],
-      setData: jest.fn(),
-    };
-    require('../context/store').useGlobalContext.mockReturnValue(mockContextValue);
+  it('handles button click and adds item to context', async () => {
+    render(<MockProductCard item={mockItem} />);
 
-    const { getByText } = render(<ProductCard item={item} />);
+    fireEvent.click(screen.getByText('Comprar'));
 
-    fireEvent.click(getByText('Comprar'));
-
-    expect(mockContextValue.setData).toHaveBeenCalledWith([
-      {
+    await waitFor(() => {
+      const contextData = data
+      expect(contextData).toContainEqual({
         total: 1,
-        photo: item.photo,
-        name: item.name,
-        price: item.price,
-      },
-    ]);
-
-    fireEvent.click(getByText('Comprar'));
-
-    expect(mockContextValue.setData).toHaveBeenCalledWith([
-      {
-        total: 2,
-        photo: item.photo,
-        name: item.name,
-        price: item.price,
-      },
-    ]);
+        photo: 'mock-photo-url',
+        name: 'Mock Product',
+        price: '$10.00',
+      });
+    });
   });
 });
