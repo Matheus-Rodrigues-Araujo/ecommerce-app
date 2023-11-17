@@ -6,14 +6,17 @@ const Sidebar = ({handleSidebar }) => {
   const {data, setData} = useGlobalContext()
   const [purchasePrice, setPurchasePrice] = useState(0)
 
-  const getTotalPrice = () =>{
+  // const getTotalPrice = () =>{
+  //   if(data.length >=1){
+  //     const total = data.reduce((acc, item) => acc + item.price * (item.total || 0), 0);
+  //     setPurchasePrice(total)
+  //   }
+  // }
+  useEffect(()=>{
     if(data.length >=1){
       const total = data.reduce((acc, item) => acc + item.price * (item.total || 0), 0);
       setPurchasePrice(total)
     }
-  }
-  useEffect(()=>{
-    getTotalPrice()
   }, [data])
 
   return (
