@@ -10,11 +10,6 @@ export default function Navbar() {
   const [totalItems, setTotalItems] = useState(0)
   const handleSidebar = () =>{ setSidebarActive(!isSidebarActive) }
 
-  // const updateItems = () => {
-  //   const total = data.reduce((acc, item) => acc + item.total, 0);
-  //   setTotalItems(total)
-  // }
-
   useEffect(() => {
     setTotalItems((prevTotal) => {
       const total = data.reduce((acc, item) => acc + item.total, 0);

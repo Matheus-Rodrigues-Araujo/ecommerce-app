@@ -39,7 +39,7 @@ describe('ProductCard', () => {
   it('handles button click and adds item to context', async () => {
     render(<MockProductCard item={mockItem} />);
 
-    const { data } = useGlobalContext(); // Destructure data from the context
+    const { data } = useGlobalContext();
 
     fireEvent.click(screen.getByText('Comprar'));
 

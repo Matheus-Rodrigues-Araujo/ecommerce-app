@@ -10,7 +10,7 @@ jest.mock('../components/Sidebar', () => {
   return {
     __esModule: true,
     default: () => <div data-testid="mock-sidebar" />,
-    displayName: 'Sidebar', // Set the display name here
+    displayName: 'Sidebar',
   };
 });
 

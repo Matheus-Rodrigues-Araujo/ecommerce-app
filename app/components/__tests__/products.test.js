@@ -1,5 +1,3 @@
-// Products.test.js
-
 import { render, waitFor, screen } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { rest } from 'msw';
