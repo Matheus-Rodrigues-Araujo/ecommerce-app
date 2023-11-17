@@ -52,7 +52,6 @@ nav{
   }
 
 @media screen and (max-width: 400px){
-    
     nav{
       padding-inline: 1.5rem;
     }
