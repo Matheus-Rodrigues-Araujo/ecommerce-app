@@ -6,7 +6,13 @@ jest.mock('../context/store', () => ({
   useGlobalContext: jest.fn(),
 }));
 
-jest.mock('../components/Sidebar', () => () => <div data-testid="mock-sidebar" />);
+jest.mock('../components/Sidebar', () => {
+  return {
+    __esModule: true,
+    default: () => <div data-testid="mock-sidebar" />,
+    displayName: 'Sidebar', // Set the display name here
+  };
+});
 
 describe('Navbar', () => {
   it('renders navbar correctly with total items', () => {
