@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ProductCard from './ProductCard';
@@ -15,7 +16,8 @@ const MockProductCard = ({ item }) => {
 
 MockProductCard.displayName = 'MockProductCard';
 
-jest.mock('next/image', () => ({ src, alt }) => <img src={src} alt={alt} />);
+jest.mock('next/image', () => ({ src, alt }) => <Image src={src} alt={alt} />);
+
 
 describe('ProductCard', () => {
   const mockItem = {
