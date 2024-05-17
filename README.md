@@ -7,6 +7,8 @@ Web application that simulates an intuitive and realistic shopping journey, allo
 ## Technologies
 - JavaScript
 - TypeScript
+- Unit testing
+- React Testing Library
 - React
 - Next
 - HTML
